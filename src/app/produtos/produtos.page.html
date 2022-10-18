@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <img src="../../assets/cardapio.jpg.jpg">
+
+  <ion-card *ngFor="let produto of lanches">
+
+    <ion-card-header>
+      <h1>{{produto.firstName}}</h1>
+    </ion-card-header>
+
+    <ion-card-content >
+      <ion-label><h2 style="font-size: 15px">
+        Descrição: {{produto.lastName}}<br>
+      </h2></ion-label>
+    </ion-card-content>
+
+    <ion-text color="success"><h2 style="font-size: 17px">  Valor: R${{produto.mobileNumber}}</h2></ion-text>
+    
+    <ion-button  (click)="popUpProduto()">Click Me</ion-button>
+
+  </ion-card>
+  
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button (click)="showHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button>
+      <ion-icon name="albums"></ion-icon>
+      <ion-label>Produtos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="showPerfil()">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="authService.SignOut()" expand="block">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>Sair</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
